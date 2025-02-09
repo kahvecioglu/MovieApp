@@ -1,4 +1,4 @@
-import { View, Text, Image, StatusBar } from 'react-native'; 
+import { View, Text, TouchableOpacity, Image, StatusBar } from 'react-native'; 
 import React from 'react'; 
 import { useNavigation } from '@react-navigation/native';
 
@@ -45,6 +45,33 @@ export default function WelcomeScreen() {
             }}>
                 Film izlemenin tek adresi
             </Text>
+
+            {/* Start Button */}
+            <TouchableOpacity 
+                style={{
+                    backgroundColor: '#FF6347', // Buton rengi
+                    paddingVertical: 12, // Yükseklik
+                    paddingHorizontal: 40, // Genişlik
+                    borderRadius: 30, // Yuvarlatılmış köşeler
+                    marginTop: 30, // Üst boşluk
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    shadowColor: "#000", // Gölgeleme
+                    shadowOffset: { width: 0, height: 5 },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 3.5,
+                    elevation: 5, // Android'deki gölge için
+                }}
+                onPress={() => navigation.navigate('HomeTab')} // HomeTab'e git
+            >
+                <Text style={{
+                    fontSize: 18,
+                    color: 'white',
+                    fontWeight: 'bold',
+                }}>
+                    Başla
+                </Text>
+            </TouchableOpacity>
         </View>
     );  
 }
